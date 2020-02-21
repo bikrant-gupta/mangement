@@ -1,0 +1,84 @@
+*{
+	margin:0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.btn{
+	/*height: 30px;*/
+	border: 0px;
+	width:100%;
+	margin:4px;
+}
+
+.option-bar{
+	/*height: 500px;*/
+	/*border: 1px solid black;SSS*/
+}
+.row{
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-left: 0px;
+}
+
+/*-------------------------------*/
+#welcome{
+	display: none;
+}
+#push{
+	display: none;
+}
+#student{
+	display: none;
+}
+#teacher{
+	display: none;
+}
+.visible-menu{
+	display: block !important;
+}
+/*------------------------------------*/
+.s-o,.t-o{
+	text-align:center;
+}
+
+/*----------------------------------*/
+#add-student{
+	display: none;
+}
+#delete-student{
+	display: none;
+}
+#edit-student{
+	display: none;
+}
+#get-teacher{
+	display: none;
+}
+#get-student{
+	display: none;
+}
+#add-teacher{
+	display: none;
+}
+#delete-teacher{
+	display: none;
+}
+#edit-teacher{
+	display: none;
+}
+
+#profile{
+	display: none;
+}
+.visible-student ,.visible-teacher{
+	display: block !important;
+}
+/*-----------------------------------------*/
+.student-sub-btn{
+	display: none;
+}
+.teacher-sub-btn{
+	display: none;
+}
+

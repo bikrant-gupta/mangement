@@ -1,0 +1,23 @@
+<% if(typeof error != 'undefined'){ %>
+    <div class="error-message form-margin">
+        <%= error %>
+    </div>
+<% } %>
+<% if(typeof warning != 'undefined'){ %>
+    <div class="warning-message form-margin">
+        <%= warning %>
+    </div>
+<% } %>
+<% if(typeof success != 'undefined'){ %>
+    <div class="success-message form-margin">
+        <%= success %>
+    </div>
+<% } %>
+
+<% if(typeof errors !='undefined') { %>
+    <% errors.forEach((error)=>{ %>
+        <div class="error-message form-margin">
+            <%= error %>
+        </div>
+    <% }) %>
+<% } %>

@@ -1,0 +1,447 @@
+<div class="row">
+    <div class="col-3 col-lg-2 col-md-3 option-bar">
+        <button class="btn btn-color welcome-btn menu-btn" for="welcome"> <i class="fas fa-home"></i> Welcome</button>
+        <button class="btn btn-color push-btn menu-btn" for="push"><i class="fas fa-bell"></i> Push Notification</button>
+        <button class="btn btn-color student-btn menu-btn" for="student"><i class="fas fa-user-graduate"></i> Students</button>
+        <div class="student-sub-btn">
+            <button class="btn btn-sub-color student-sub-btn s-in" for="add-student"><i class="fas fa-plus"></i> Add Students</button>
+            <button class="btn btn-sub-color student-sub-btn s-in" for="delete-student"><i class="fas fa-trash"></i> Delete Students</button>
+            <button class="btn btn-sub-color student-sub-btn s-in" for="edit-student"><i class="fas fa-edit"></i> Edit Students</button>
+            <button class="btn btn-sub-color student-sub-btn s-in" for="get-student"><i class="fas fa-user"></i> Get/Sort Students</button>
+        </div>
+        <button class="btn btn-color teacher-btn menu-btn" for="teacher"><i class="fas fa-chalkboard-teacher"></i> Teachers</button>
+        <div class="teacher-sub-btn">
+            <button class="btn btn-sub-color teacher-sub-btn t-in" for="add-teacher"><i class="fas fa-plus"></i> Add Teachers</button>
+            <button class="btn btn-sub-color teacher-sub-btn t-in" for="delete-teacher"><i class="fas fa-trash"></i> Delete Teachers</button>
+            <button class="btn btn-sub-color teacher-sub-btn t-in" for="edit-teacher"><i class="fas fa-edit"></i> Edit Teachers</button>
+            <button class="btn btn-sub-color teacher-sub-btn t-in" for="get-teacher"><i class="fas fa-user"></i> Get/Sort Teachers</button>
+        </div>
+        <button class="btn btn-color profile-btn menu-btn" for="profile"><i class="fas fa-user-circle"></i> Profile </button>
+
+    </div>
+    <div class="col-md-9 col-lg-10 col-12 main-box">
+
+
+        <div class="visible-menu" id="welcome">
+            Welcome to BKG Institute of Science and Technology.<br><br>
+            <h3>Updates and Notification</h3><hr class="hr">
+            <div class="get-notification">
+            </div>
+        </div>
+
+        <div class="" id="push">
+                <div class="row">
+                    <%- include('partials/messages') %>
+                    <div class="col-12 col-sm-2">
+                        <label><h4>Update:</h4></label>
+                    </div>
+                    <div class="col-12 col-sm-10">
+                        <textarea class="form-control" rows="10" cols="10" name="message"></textarea>
+                    </div>
+                    <div class="form-margin col-12 col-sm-2 offset-sm-2 form-margin">
+                        <button class="btn-color btn push-update-btn">Send</button>
+                    </div>
+                </div>
+        </div>
+
+
+        <div class="" id="student">
+            
+            <div class="" id="add-student">
+                <div class="">
+                    <div class="border radius login-form">
+                        <!-- <form action="/register/fromadmin" method="POST"> -->
+                            <div class="login-form-header">Register Student</div>
+                            <div class="form-padding">
+                                <div class="row">
+                                    <!-- name -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Full Name:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="text" name="name" class="form-control"  ></div>
+
+                                    <!-- DOB -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Date of Birth:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="Date" name="birth-date" class="form-control"  ></div>
+
+                                    <!-- gender -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Gender:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <label><input type="radio" name="gender" value="male">Male </label>
+                                        <label><input type="radio" name="gender" value="female">Female</label>
+                                        <label><input type="radio" name="gender" value="other">Other</label>
+                                    </div>
+
+
+                                    <!-- choose student/teacher -->
+                                    <div class="col-12 col-lg-3 form-margin">
+                                        <label>Profession:</label>
+                                    </div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <select class="form-control"  name="profession" >
+                                            <option value="Student" >Student</option>
+                                        </select>
+                                    </div>
+
+
+                                    <!-- choose course -->
+                                    <div class="col-12 col-lg-3 form-margin">
+                                        <label>Course:</label>
+                                    </div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <select class="form-control"  name="course" >
+                                            <option value="notchoosen">--Select One--</option>
+                                            <option value="btech">Bachelor of Technology</option>
+                                            <option value="barch">Bachelor of Architecture</option>
+                                            <option value="medical">MBA</option>
+                                            <option value="bsc">Bachelor of Science</option>
+                                            <option value="hotel">Hotel Management</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- choose department -->
+                                    <div class="col-12 col-lg-3 form-margin">
+                                        <label>Department:</label>
+                                    </div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <select class="form-control"  name="department" >
+                                            <option value="notchoosen">--Select One--</option>
+                                            <option value="it">Information Technology</option>
+                                            <option value="cse">Computer Science</option>
+                                            <option value="mech">Mechanical</option>
+                                            <option value="eee">Electrical and Electronics</option>
+                                            <option value="ece">Electronics and Communication</option>
+                                            <option value="civil">Civil</option>
+                                            <option value="aero">Aerospace</option>
+                                            <option value="math">Mathematics</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- email -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Email ID:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="Email" name="email"  class="form-control"  ></div>
+
+                                    <div class="col-12 col-lg-3 form-margin"><label>Mobile:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="number"  name="mobile"  class="form-control"  ></div>
+
+                                    <div class="col-12 offset-lg-3 col-lg-9 form-margin"><button class="btn btn-color register-student-btn col-lg-4 col-12">Register</button></div>
+
+                                </div>
+                            </div>
+                            
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+            <div class="" id="delete-student">
+                <form action="/register/fromadmin" method="DELETE">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="department" class="form-control">
+                                <option value="notchoosen">--Select One--</option>
+                                <option value="it">Information Technology</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="eee">Electrical and Electronics</option>
+                                <option value="ece">Electronics and Communication</option>
+                                <option value="civil">Civil</option>
+                                <option value="aero">Aerospace</option>
+                                <option value="math">Mathematics</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="delete-by" class="form-control">
+                                <option value="reg-num">Register Number</option>
+                                <option value="email">Email Id</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <input type="text" class="form-control" name="delete-id" placeholder="Enter RegistrationID/email here">
+                        </div>
+                        <div class="col-12 col-sm-4 offset-sm-4">
+                            <button class="form-control btn-color delete-std-btn-fetch-detail" type="button">Fetch Detail</button>
+                        </div>
+                        <div class="error-message col-12">Error Message</div>
+                        <div class="std-detail"></div>
+                        
+                    </div>
+                </form>
+                    
+            </div>
+
+            <div class="" id="edit-student">
+                <form action="/register/fromadmin" method="PUT">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="department" class="form-control">
+                                <option value="notchoosen">--Select One--</option>
+                                <option value="it">Information Technology</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="eee">Electrical and Electronics</option>
+                                <option value="ece">Electronics and Communication</option>
+                                <option value="civil">Civil</option>
+                                <option value="aero">Aerospace</option>
+                                <option value="math">Mathematics</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="delete-by" class="form-control">
+                                <option value="reg-num">Register Number</option>
+                                <option value="email">Email Id</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <input type="text" class="form-control" name="edit-id" placeholder="Enter RegistrationID/email here">
+                        </div>
+                        <div class="col-12 col-sm-4 offset-sm-4">
+                            <button class="form-control btn-color" type="button">Fetch Detail</button>
+                        </div>
+                        <div class="error-message col-12">Error Message</div>
+                        
+                    </div>
+                </form>
+                    
+                <div class="edit-student-detail">
+                    Student Detail will shown here
+                </div>
+            </div>
+
+            <div id="get-student">
+                <!-- <form action="/register/fromadmin" method="GET">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select class="form-control"  name="branch" >
+                                <option value="top10">--Select One--</option>
+                                <option value="top10"></option>
+                                <option value="top50" ></option>
+                                <option value="top100"></option>
+                                <option value="top500"></option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="department" class="form-control">
+                                <option value="notchoosen">--Select One--</option>
+                                <option value="it">Information Technology</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="eee">Electrical and Electronics</option>
+                                <option value="ece">Electronics and Communication</option>
+                                <option value="civil">Civil</option>
+                                <option value="aero">Aerospace</option>
+                                <option value="math">Mathematics</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-4 form-margin">
+                            <label>Fee Paid:</label>
+                            <label>Yes <input type="radio" name="fee-paid" value="Yes"></label>
+                            <label>No <input type="radio" name="fee-paid" value="No"></label>
+
+                        </div>
+
+
+                    </div> 
+                </form>-->
+                <div class="get-student-detail">
+                    Student Detail will shown here
+                </div>
+            </div>
+        </div>
+
+
+        <div class="" id="teacher">
+            <div class="" id="add-teacher">
+                <div class="">
+                    <div class="border radius login-form">
+                        <!-- <form> -->
+                            <div class="login-form-header">Register Teacher</div>
+
+
+                            <div class="form-padding">
+                                <div class="row">
+                                    <!-- name -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Full Name:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="text" name="name" class="form-control"></div>
+
+                                    <!-- DOB -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Date of Birth:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="Date" name="birth-date" class="form-control"></div>
+
+                                    <!-- gender -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Gender:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <label><input type="radio" name="gender" value="male">Male </label>
+                                        <label><input type="radio" name="gender" value="female">Female</label>
+                                        <label><input type="radio" name="gender" value="other">Other</label>
+                                    </div>
+
+
+                                    <!-- choose student/teacher -->
+                                    <div class="col-12 col-lg-3 form-margin">
+                                        <label>Profession:</label>
+                                    </div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <select class="form-control"  name="profession" >
+                                            <option value="teacher" >Teacher</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- choose department -->
+                                    <div class="col-12 col-lg-3 form-margin">
+                                        <label>Department:</label>
+                                    </div>
+                                    <div class="col-12 col-lg-9 form-margin">
+                                        <select class="form-control"  name="profession" >
+                                            <option value="notchoosen">--Select One--</option>
+                                            <option value="it">Information Technology</option>
+                                            <option value="cse">Computer Science</option>
+                                            <option value="mech">Mechanical</option>
+                                            <option value="eee">Electrical and Electronics</option>
+                                            <option value="ece">Electronics and Communication</option>
+                                            <option value="civil">Civil</option>
+                                            <option value="aero">Aerospace</option>
+                                            <option value="math">Mathematics</option>
+                                        </select>
+                                    </div>
+
+
+
+                                    <!-- registration number -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>FacultyID:</label></div>
+                                    <div class="col-6 col-lg-5 form-margin"><label class="faculty-id"></label></div>
+                                    <div class="col-6 col-lg-4 form-margin"><button class="get-faculty-id btn btn-color">Generate</button></div>
+
+                                    <!-- email -->
+                                    <div class="col-12 col-lg-3 form-margin"><label>Email ID:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="Email" name="email"  class="form-control"></div>
+
+                                    <div class="col-12 col-lg-3 form-margin"><label>Mobile:</label></div>
+                                    <div class="col-12 col-lg-9 form-margin"><input type="number"  name="Mobile"  class="form-control"></div>
+
+                                    <div class="col-12 offset-lg-3 col-lg-9 form-margin"><button class="btn btn-color register-teacher-btn col-lg-4 col-12">Register</button></div>
+                                </div>
+                            </div>
+                            
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+            <div id="delete-teacher">
+                <div class="row">
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="department" class="form-control">
+                                <option value="notchoosen">--Select One--</option>
+                                <option value="it">Information Technology</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="eee">Electrical and Electronics</option>
+                                <option value="ece">Electronics and Communication</option>
+                                <option value="civil">Civil</option>
+                                <option value="aero">Aerospace</option>
+                                <option value="math">Mathematics</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="delete-by" class="form-control">
+                                <option value="faculty-id">Faculty ID</option>
+                                <option value="email">Email Id</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <input type="text" class="form-control" name="delete-id" placeholder="Enter FacultyID/email here">
+                        </div>
+                        <div class="col-12 col-sm-4 offset-sm-4">
+                            <button class="form-control btn-color delete-faculty-btn-fetch-detail" type="button">Fetch Detail</button>
+                        </div>
+                        <div class="error-message col-12">Error Message</div>
+                        <div class="faculty-detail"></div>
+                        
+                    </div>
+            </div>
+            <div id="edit-teacher">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="department" class="form-control">
+                                <option value="notchoosen">--Select One--</option>
+                                <option value="it">Information Technology</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="eee">Electrical and Electronics</option>
+                                <option value="ece">Electronics and Communication</option>
+                                <option value="civil">Civil</option>
+                                <option value="aero">Aerospace</option>
+                                <option value="math">Mathematics</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <select name="delete-by" class="form-control">
+                                <option value="faculty-id">Faculty ID</option>
+                                <option value="email">Email Id</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-4 form-margin">
+                            <input type="text" class="form-control" name="delete-id" placeholder="Enter FacultyID/email here">
+                        </div>
+                        <div class="col-12 col-sm-4 offset-sm-4">
+                            <button class="form-control btn-color edit-faculty-btn-fetch-detail" type="button">Fetch Detail</button>
+                        </div>
+                        <div class="error-message col-12">Error Message</div>
+                        <div class="faculty-detail"></div>
+                        
+                    </div>
+            </div>
+            <div id="get-teacher">
+                Get Teacher
+            </div>
+        </div>
+
+
+        <div class="" id="profile">
+            
+            <div id="profile-name">
+                <i class="fas fa-user-circle font-profile-color"></i> 
+                Bikrant Kumar Gupta
+                <button class="btn btn-color col-4 col-sm-2 profile-edit-btn">Edit <i class="fas fa-edit"></i></button>
+                <button class="btn btn-color col-4 col-sm-2 logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button>
+            </div>
+            <div class="row  profile-detail-lines">
+                <div class="col-md-3 form-margin">
+                    <label><i class="fas fa-envelope font-profile-color"></i> Email ID:</label>
+                </div>
+                <div class="col-md-9 form-margin">
+                    <div id="email">bikbikrant1999@gmail.com</div>
+                </div>
+            </div>
+            <div class="row profile-detail-lines">
+                <div class="col-md-3 form-margin">
+                    <label><i class="fas fa-user font-profile-color"></i> AdminID:</label>
+                </div>
+                <div class="col-md-9 form-margin">
+                    <div id="userid">bikrantadmin1999</div>
+                </div>
+            </div>
+            <div class="row profile-detail-lines">
+                <div class="col-md-3 form-margin">
+                    <label><i class="fas fa-phone-alt font-profile-color"></i> Phone:</label>
+                </div>
+                <div class="col-md-9 form-margin">
+                    <div id="mobile">7003753089</div>
+                </div>
+            </div>
+            <div class="row profile-detail-lines">
+                <div class="col-md-3 form-margin">
+                    <label><i class="fas fa-user-tie font-profile-color"></i> Account Type:</label>
+                </div>
+                <div class="col-md-9 form-margin">
+                    <div id="account-type">Admin</div>
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+
+    </div>
+
+</div>

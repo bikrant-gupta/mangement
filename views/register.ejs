@@ -1,0 +1,153 @@
+<div class="container">
+    <div class="border radius login-form">
+        <form action="/register" method="POST">
+            <div class="login-form-header">Register</div>
+            <div class="form-padding">
+                <div class="row">
+                    <%- include('partials/messages') %>
+
+                    <!-- your detail -->
+                    <div class="your-detail col-12 form-margin"><b>Your Detail<div class="col-12 alert-message">
+                        **make sure all detail filled are correct<br>
+                        **all fields are mandatory to be filled
+                    </div><hr></b></div>
+
+                    <!-- name -->
+                    <div class="col-12 col-md-3 form-margin"><label>Full Name:</label></div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <input 
+                        type="text" 
+                        name="name" 
+                        class="form-control"
+                        value="<%= typeof name!='undefined'?name:''%>"
+                        required>
+                    </div>
+
+                    <!-- DOB -->
+                    <div class="col-12 col-md-3 form-margin"><label>Date of Birth:</label></div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <input type="Date" name="dob" class="form-control" value="<%= typeof dob!='undefined'?dob:''%>" required>
+                    </div>
+
+                    <!-- gender -->
+                    <div class="col-12 col-md-3 form-margin"><label>Gender:</label></div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <label><input type="radio" name="gender" value="male">Male </label>
+                        <label><input type="radio" name="gender" value="female">Female</label>
+                        <label><input type="radio" name="gender" value="other">Other</label>
+                    </div>
+
+
+                    <!-- choose student/teacher -->
+                    <div class="col-12 col-md-3 form-margin">
+                        <label>You are:</label>
+                    </div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <select class="form-control" name="profession">
+                            <option value="notchoosen">--Select One--</option>
+                            <option value="Student" >Student</option>
+                            <option value="Teacher">Teacher</option>
+                        </select>
+                    </div>
+
+
+                    <!-- choose course -->
+                    <div class="col-12 col-md-3 form-margin">
+                        <label>Course:</label>
+                    </div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <select class="form-control"  name="course" >
+                            <option value="notchoosen">--Select One--</option>
+                            <option value="Teacher" >Teacher</option>
+                            <option value="btech">Bachelor of Technology</option>
+                            <option value="barch">Bachelor of Architecture</option>
+                            <option value="medical">MBA</option>
+                            <option value="bsc">Bachelor of Science</option>
+                            <option value="hotel">Hotel Management</option>
+                        </select>
+                    </div>
+
+                    <!-- choose department -->
+                    <div class="col-12 col-md-3 form-margin">
+                        <label>Department:</label>
+                    </div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <select class="form-control"  name="department">
+                            <option value="notchoosen">--Select One--</option>
+                            <option value="it">Information Technology</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="mech">Mechanical</option>
+                            <option value="eee">Electrical and Electronics</option>
+                            <option value="ece">Electronics and Communication</option>
+                            <option value="civil">Civil</option>
+                            <option value="aero">Aerospace</option>
+                            <option value="math">Mathematics</option>
+                        </select>
+                    </div>
+
+
+
+                    <!-- registration number -->
+                    <div class="col-12 col-md-3 form-margin"><label>Registration Number / FacultyID:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="text"  name="userid"  class="form-control" value="<%= typeof userid!='undefined'?userid:''%>" required></div>
+
+                    <!-- email -->
+                    <div class="col-12 col-md-3 form-margin"><label>Email ID:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="Email" name="email"  class="form-control" value="<%= typeof email!='undefined'?email:''%>" required></div>
+
+                    <!-- password -->
+                    <div class="col-12 col-md-3 form-margin"><label>Create Password:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="Password"  name="password"  class="form-control" value="<%= typeof password!='undefined'?password:''%>" required></div>
+
+                    <!-- re-password -->
+                    <div class="col-12 col-md-3 form-margin"><label>Re-enter Password:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="Password"  name="repassword" class="form-control" value="<%= typeof repassword !='undefined'?repassword:''%>" required></div>
+
+                    
+
+                    <div class="your-detail col-12 form-margin"><br><hr><b>Your Personal Detail</b><hr></div>
+
+                    <!-- address -->
+                    <div class="col-12 col-md-3 form-margin"><label>Address:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><textarea  name="address"  class="form-control" required><%= typeof address!='undefined'?address:''%></textarea></div>
+
+                    <!-- state -->
+                    <div class="col-12 col-md-3 form-margin"><label>State:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="text"  name="state"  class="form-control" value="<%= typeof state!='undefined'?state:''%>" required></div>
+
+                    <!-- pincode -->
+                    <div class="col-12 col-md-3 form-margin"><label>Pincode:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="number"  name="pincode"  class="form-control" value="<%= typeof pincode!='undefined'?pincode:''%>" required></div>
+
+                    <!-- phone number -->
+                    <div class="col-12 col-md-3 form-margin"><label>Mobile:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="number"  name="mobile"  class="form-control" value="<%= typeof mobile!='undefined'?mobile:''%>" required></div>
+
+                    <div class="your-detail col-12 form-margin"><br><hr><b>Your Parent Details</b><hr></div>
+
+                    <!-- father name -->
+                    <div class="col-12 col-md-3 form-margin"><label>Father's Name:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="text"  name="fathername"  class="form-control" value="<%= typeof fathername!='undefined'?fathername:''%>" required></div>
+
+                    <!-- mother's name -->
+                    <div class="col-12 col-md-3 form-margin"><label>Mother's Name:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="text"  name="mothername"  class="form-control" value="<%= typeof mothername!='undefined'?mothername:''%>" required></div>
+
+                    <!-- father phone number -->
+                    <div class="col-12 col-md-3 form-margin"><label>Father's Mobile:</label></div>
+                    <div class="col-12 col-md-9 form-margin"><input type="number"  name="fatherphone"  class="form-control" value="<%= typeof fatherphone!='undefined'?fatherphone:''%>" required></div>
+
+
+                    <div class="col-12 offset-md-3 col-md-9 form-margin"><button class="btn btn-color register-btn col-md-4 col-12">Register</button></div>
+
+                    <div class="col-12 offset-md-3 col-md-9 form-margin"><a href="/login" class="btn btn-color  col-md-4 col-12">Login?</a></div>
+
+                    
+
+
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="border radius login-form">
+        <form action="/login" method="POST">
+            <div class="login-form-header">Login</div>
+            
+
+            <div class="form-padding">
+                <div class="row">
+                    <%- include('partials/messages') %>
+                    <div class="col-12 col-md-3 form-margin"><label>Email/UserID:</label></div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        name='userid'
+                        value="<%= (typeof userid!='undefined')?userid:''%>"
+                         required >
+                    </div>
+                    <div class="col-12 col-md-3 form-margin"><label>Password:</label></div>
+                    <div class="col-12 col-md-9 form-margin">
+                        <input 
+                        type="Password" 
+                        class="form-control" 
+                        name='password' 
+                        value="<%= (typeof password!='undefined')?password:''%>"
+                        required>
+                    </div>
+                    <div class="col-12 offset-md-3 col-md-9 form-margin"><button class="btn btn-color login-btn col-md-4 col-12" type="submit">Login</button></div>
+                    <div class="col-12 offset-md-3 col-md-9 form-margin"><a href="/register" class="btn btn-color col-md-4 col-12" type="button">Register?</a></div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
