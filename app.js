@@ -28,7 +28,6 @@ const FacultyNotification = require('./models/Faculty_notification');
 const Courses = require('./models/Courses');
 const AdminDetails = require('./models/AdminDetails');
 const InstituteNotification = require('./models/InstituteNotification')
-// const url = 'mongodb+srv://bikrant1999:bkgcollege2020@cluster0-pzd91.mongodb.net/test';
 const url = 'mongodb+srv://bikrant1999:password@cluster0-pzd91.mongodb.net/test?retryWrites=true&w=majority';
 const connect = mongoose.connect(url, { useNewUrlParser: true });
 
